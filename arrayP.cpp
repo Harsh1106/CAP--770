@@ -1,8 +1,14 @@
 #include<iostream>
 using namespace std;
-
+void found(int arr[], int size){
+    int choice = 0;
+    for(int i = 0 ; i < size ; i++){
+        choice = choice^arr[i];
+    }
+    cout<<"Unique element is: "<<choice;
+}
 int main(){
-    int arr[] = {1,2,3,4,5,6,7,8,9,10};
+    int arr[] = {2,4,7,2,7};
     int arrSize = sizeof(arr)/sizeof(int);
-    cout<<"Size of array is: "<<arrSize;
+    found(arr, arrSize);
 }
