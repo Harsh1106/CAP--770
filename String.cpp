@@ -20,8 +20,28 @@ string findLen(const string& str){
     return str.substr(start, maxLength);
 }
 
+string removalString(string str){
+    int idx = 0;
+    int len = sizeof(str)/sizeof(str[0]);
+    for(int i = 0 ; i < len ; i++){
+        int j;
+        for(j = 1 ; j < len ; j++){
+            if(str[i] == str[j] && i != j){
+                break;
+            }
+        }
+        if(j == i){
+            str[idx++] = str[i];
+        }
+        str.erase(idx);
+        return str;
+    }
+}
+
 int main(){
-    string str = "examplestring";
+    string str = "examplestring geeksforgeeksand";
     string len = findLen(str);
-    cout<<"Longest substring is: "<<len<<endl;
+    cout<<len<<endl;
+    string repeat = removalString(len);
+    cout<<"Longest substring without repeatition: "<<repeat<<endl;
 }
