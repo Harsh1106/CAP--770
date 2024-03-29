@@ -70,3 +70,10 @@ int main()
     preorder(t);
     return 0;
 }
+
+
+
+
+// Inorder / Preorder / Postorder
+//  LNR        NLR       LRN
+// L = Left, N = Node, R = Right
