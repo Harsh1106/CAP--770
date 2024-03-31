@@ -1,5 +1,7 @@
 // Diameter of tree: Longest path of any 2 nodes basically it is number of nodes.
 // Longest path b/w any two nodes like leaf and root.
+// TC: O(N)
+// SC: O(Height of tree)
 
 #include <iostream>
 #include <string>
