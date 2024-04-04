@@ -20,12 +20,39 @@ struct Node{
     }
 };
 
+Node* insertBST(Node* root, int val){
+    if(root == NULL){
+        return new Node(val);
+    }
+    if(val < root -> data){
+        root -> left = insertBST(root -> left, val);
+    }
+    else{
+        root -> right = insertBST(root -> right, val);
+    }
+    return root;
+}
 
+void inorder(Node* root){
+    if(root == NULL){
+        return;
+    }
+    inorder(root -> left);
+    cout<<root -> data<<" ";
+    inorder(root -> right);
+}
 
 int main(){
-    struct Node *root = new Node(1);
-    root -> left = new Node(2);
-    root -> right = new Node(3);
-    root -> left -> right = new Node(5);
+    Node* root = NULL;
+    root = insertBST(root, 5);
+    insertBST(root, 1);
+    insertBST(root, 3);
+    insertBST(root, 4);
+    insertBST(root, 2);
+    insertBST(root, 7);
+
+    //print 
+    inorder(root);
+    cout<<endl;
     return 0;
 }
