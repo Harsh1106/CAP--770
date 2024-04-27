@@ -34,6 +34,16 @@ void insert(int value) {
   }
 }
 
+void search(int value){
+    Node* newNode = new Node;
+    if(newNode -> data != NULL){
+        cout<<"Data is found."<<endl;
+    }
+    else{
+        newNode = newNode -> next;
+    }
+}
+
 void print() {
   for (int i = 0; i < size; i++) {
     Node* temp = chain[i];
@@ -50,6 +60,7 @@ int main() {
   init();
 
   insert(7);
+  insert(49);
   insert(0);
   insert(3);
   insert(10);
@@ -57,6 +68,8 @@ int main() {
   insert(5);
 
   print();
+
+  search(7);
 
   return 0;
 }
