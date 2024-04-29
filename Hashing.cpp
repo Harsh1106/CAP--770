@@ -35,13 +35,17 @@ void insert(int value) {
 }
 
 void search(int value){
-    Node* newNode = new Node;
-    if(newNode -> data != NULL){
-        cout<<"Data is found."<<endl;
+    int key = value % size;
+    Node* temp = chain[key];
+
+    while(temp){
+      if(temp -> data == value){
+        cout<<"Data: "<<value<<" is found."<<endl;
+        return;
+      }
+      temp = temp -> next;
     }
-    else{
-        newNode = newNode -> next;
-    }
+    cout<<"Data: "<<value<<" is not found."<<endl;
 }
 
 void print() {
@@ -69,7 +73,7 @@ int main() {
 
   print();
 
-  search(7);
+  search(0);
 
   return 0;
 }
