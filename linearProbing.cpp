@@ -1,10 +1,10 @@
 #include <iostream>
 
-#define TABLE_SIZE 10
+#define size 10
 
 using namespace std;
 
-int h[TABLE_SIZE] = {NULL}; // Initialize hash table to NULL values
+int h[size] = {NULL}; // Initialize hash table to NULL values
 
 void insert() {
   int key, index, i, flag = 0, hkey;
@@ -12,11 +12,11 @@ void insert() {
   cout << "\nEnter a value to insert into hash table\n";
   cin >> key;
 
-  hkey = key % TABLE_SIZE; // Calculate hash index
+  hkey = key % size; // Calculate hash index
 
   // Probe for an empty slot using linear probing
-  for (i = 0; i < TABLE_SIZE; i++) {
-    index = (hkey + i) % TABLE_SIZE; // Calculate probed index
+  for (i = 0; i < size; i++) {
+    index = (hkey + i) % size; // Calculate probed index
 
     if (h[index] == NULL) {
       h[index] = key;
@@ -25,7 +25,7 @@ void insert() {
     }
   }
 
-  if (i == TABLE_SIZE) {  // Table full
+  if (i == size) {  // Table full
     cout << "\nElement cannot be inserted (Hash Table Overflow)\n";
   }
 }
@@ -36,11 +36,11 @@ void search() {
   cout << "\nEnter search element\n";
   cin >> key;
 
-  hkey = key % TABLE_SIZE;
+  hkey = key % size;
 
   // Probe for the key using linear probing
-  for (i = 0; i < TABLE_SIZE; i++) {
-    index = (hkey + i) % TABLE_SIZE;
+  for (i = 0; i < size; i++) {
+    index = (hkey + i) % size;
     if (h[index] == key) {
       cout << "Value found at index " << index << endl;
       break;
@@ -50,7 +50,7 @@ void search() {
     }
   }
 
-  if (i == TABLE_SIZE && h[index] != key) { // Searched entire table, not found
+  if (i == size && h[index] != key) { // Searched entire table, not found
     cout << "\nValue is not found\n";
   }
 }
@@ -60,7 +60,7 @@ void display() {
 
   cout << "\nElements in the hash table are \n";
 
-  for (i = 0; i < TABLE_SIZE; i++) {
+  for (i = 0; i < size; i++) {
     cout << "\nat index " << i << " \t value = ";
     if (h[i] == NULL) {
       cout << "NULL";
