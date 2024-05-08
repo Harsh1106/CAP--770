@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 #include <vector>
 
 using namespace std;
@@ -74,6 +74,46 @@ int main() {
   print();
 
   search(0);
+
+  return 0;
+}
+*/
+
+// hashing through STL
+#include<iostream>
+#include<map>
+#include<unordered_map>
+using namespace std;
+
+int main(){
+  unordered_map<string, int> m;
+
+  // 1st way to create hashmap
+  pair<string, int> p = make_pair("harsh", 3);
+  m.insert(p);
+
+  // 2nd way to create hashmap
+  pair<string, int> p2("raj", 2);
+  m.insert(p2);
+  
+  // 3rd way to create hashmap
+  m["mera"] = 1;
+
+
+  // searching
+  cout<<m["mera"]<<endl;
+  cout<<m.at("harsh")<<endl;
+
+  cout<<m["unknownKey"]<<endl;
+  cout<<m.at("unknownKey")<<endl;
+
+  cout<<m.size()<<endl;
+
+  cout<<m.count("harsh")<<endl;
+
+  m.erase("harsh");
+  cout<<m.size()<<endl;
+
 
   return 0;
 }
