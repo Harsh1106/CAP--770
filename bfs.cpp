@@ -1,5 +1,7 @@
 // BFS: Breadth First Search
 // It is just a traversal technique
+// TC: O(V + E)
+// SC: O(V)
 #include<iostream>
 #include<vector>
 #include<queue>
